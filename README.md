@@ -13,11 +13,11 @@ Now you can find 'kafka-spark.jar' under 'build/'.
 Run `docker-compose run --rm --service-ports java` to set up Java, Kafka and ZooKeeper containers. Keep this Java container open.
 
 Open a new terminal and run 'docker ps' to check the container list.
-move the 'kafka-spark.jar' to the Java container '/build'.
-move the 'apache-access-log' file to Kafka container.
+move the `kafka-spark.jar` to the Java container '/build'.
+move the `apache-access-log.txt` file to Kafka container.
 
 Run 
-'''wget https://d3kbcqa49mib13.cloudfront.net/spark-2.2.0-bin-hadoop2.7.tgz'''
+```wget https://d3kbcqa49mib13.cloudfront.net/spark-2.2.0-bin-hadoop2.7.tgz```
 to download it to '/build' in Java container and unpack it to distribute Spark.
 
 In the java container terminal run:
