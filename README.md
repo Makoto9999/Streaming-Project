@@ -16,6 +16,8 @@ Open a new terminal and run 'docker ps' to check the container list.
 move the `kafka-spark.jar` to the Java container `/build`.
 move the `apache-access-log.txt` file to Kafka container.
 
+
+
 Run 
 ```
 wget https://d3kbcqa49mib13.cloudfront.net/spark-2.2.0-bin-hadoop2.7.tgz
@@ -40,9 +42,12 @@ docker exec -it $(docker-compose ps -q kafka) bash
 ```
 to get into Kafka container.
 
+
+
 Run 
 ```
-tail -n20000 apache-access-log.txt | kafka-console-producer.sh --broker-list localhost:9092 --topic events```
+tail -n20000 apache-access-log.txt | kafka-console-producer.sh --broker-list localhost:9092 --topic events
+```
 to push the latest 2000 records to Kafka.
 
 In the java container we will see the result. And the detected attacks will be saved to `/result` in java container.
