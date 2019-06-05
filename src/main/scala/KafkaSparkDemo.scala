@@ -11,7 +11,7 @@ import org.apache.spark.streaming.kafka010.KafkaUtils
 import org.apache.spark.streaming.kafka010.LocationStrategies.PreferConsistent
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
-object KafkaSpark {
+object KafkaSparkDemo {
 
   def row(line: List[String]): Row = {
     Row(line(0), line(1), line(2), line(3), line(4), line(5), line(6), line(7), line(8), line(9), line(10))
@@ -35,7 +35,7 @@ object KafkaSpark {
     Logger.getLogger("akka").setLevel(Level.WARN)
     val spark = SparkSession
       .builder()
-      .appName("KafkaSpark")
+      .appName("KafkaSparkDemo")
       .getOrCreate()
 
     import spark.implicits._
